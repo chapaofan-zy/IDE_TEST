@@ -8,9 +8,18 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: test
+        run: echo start
       - name: Release
         uses: softprops/action-gh-release@v2
-        # if: startsWith(github.ref, 'refs/tags/')
+        if: startsWith(github.ref, 'refs/tags/')
         with:
-          token: ${{ secrets.TEST_SECRET }}
-          files: ./test1.exe
+          token: ${{ secrets.TEST_SEC1RET }}
+          body: aaa
+          files: |
+            ./test11.exe
+            Release.txt
+      - name: test
+        run: echo end
