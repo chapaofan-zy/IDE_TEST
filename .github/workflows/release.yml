@@ -18,9 +18,6 @@ jobs:
         with:
           token: ${{ secrets.TEST_SECRET }}
           body: aaa
-          files: |
-            ./test1.exe
-            Release.txt
-            AIoTIDESetup.exe
+          files: AIoTIDESetup.exe
       - name: test
         run: echo end
