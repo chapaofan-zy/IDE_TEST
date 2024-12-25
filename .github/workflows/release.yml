@@ -1,6 +1,8 @@
 name: Main
 
-on: push
+on:
+  push:
+    tags: "*"
 
 jobs:
   build:
@@ -8,7 +10,7 @@ jobs:
     steps:
       - name: Release
         uses: softprops/action-gh-release@v2
-        if: startsWith(github.ref, 'refs/tags/')
+        # if: startsWith(github.ref, 'refs/tags/')
         with:
           token: ${{ secrets.TEST_SECRET }}
           files: ./test1.exe
