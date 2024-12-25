@@ -16,10 +16,10 @@ jobs:
         uses: softprops/action-gh-release@v2
         if: startsWith(github.ref, 'refs/tags/')
         with:
-          token: ${{ secrets.TEST_SEC1RET }}
+          token: ${{ secrets.TEST_SECRET }}
           body: aaa
           files: |
-            ./test11.exe
+            ./test1.exe
             Release.txt
       - name: test
         run: echo end
